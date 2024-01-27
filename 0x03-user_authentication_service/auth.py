@@ -48,7 +48,13 @@ class Auth:
         self._db = DB()
 
     def register_user(self, email: str, password: str) -> Union[None, User]:
-        """_summary_
+        """Register a new user and return a user object
+        Args:
+            email (str): new user's email address
+            password (str): new user's password
+        Return:
+            if no user with given email exists, return newly created user
+            else raise ValueError
         """
         try:
             # find the user with the given email
